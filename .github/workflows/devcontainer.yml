@@ -25,8 +25,9 @@ jobs:
         with:
           # Change this to point to your image name
           imageName: ghcr.io/sakin97/devcontainer
+          cacheFrom: ghcr.io/sakin97/devcontainer
           # Change this to be your CI task/script
           runCmd: |
             # Add multiple commands to run if needed
-            make install-packages
-            make ci-build
+            npm ci
+            npm run build
